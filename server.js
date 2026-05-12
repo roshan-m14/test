@@ -21,13 +21,31 @@ let confessions = [
 // ==========================================
 
 // Task 1: Write the GET route here
-
+app.get('/api/confessions', (req, res) => {
+    res.status(200).json(confessions);
+});
 
 // Task 2: Write the POST route here
+app.post('/api/confessions', (req, res) => {
+    const { alias, secretText } = req.body;
 
+    const newConfession = {
+        id: confessions.length + 1,
+        alias: alias || 'Anonymous',
+        secretText: secretText || ''
+    };
+
+    confessions.push(newConfession);
+
+    res.status(201).json({
+        message: "Confession Posted Successfully",
+        data: newConfession
+    });
+});
 
 // ==========================================
-
+// START SERVER
+// ==========================================
 app.listen(PORT, () => {
-    console.log(`API Server is running on port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });

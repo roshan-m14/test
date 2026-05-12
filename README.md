@@ -2,6 +2,6 @@
 
 <h1>LAB TEST</h1>
 
-<b>Name:</b>
+<b>Name: Roshan Manirajan</b>
 
-<b>ID:</b>
+<b>ID: 1106232001</b>
